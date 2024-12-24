@@ -11,6 +11,7 @@
 
     <modules>
         <module>config-service</module>
+        <module>service-discovery-service</module>
     </modules>
 </project>
 
