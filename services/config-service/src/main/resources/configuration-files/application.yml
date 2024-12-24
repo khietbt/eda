@@ -1,0 +1,35 @@
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE}
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME}
+server:
+  port: ${SERVER_PORT}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  pattern:
+    correlation: "[${spring.application.name:},%X{traceId:-},%X{spanId:-}] "
+  include-application-name: false
+
+spring:
+  discovery:
+    enabled: true
+  jpa:
+    properties:
+      hibernate:
+        type:
+          preferred_uuid_jdbc_type: CHAR
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss.SSS
