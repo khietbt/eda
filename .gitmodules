@@ -1,3 +1,0 @@
-[submodule "dockers"]
-	path = dockers
-	url = git@github.com:khietbt/dockers.git
