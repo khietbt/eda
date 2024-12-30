@@ -1,4 +1,3 @@
 # service-discovery-service
 
-An Eureka service
-
+A service discovery application using Netflix Eureka

@@ -2,5 +2,4 @@ spring:
   application:
     name: service-discovery-service
   config:
-    import: ${SPRING_CONFIG_IMPORT:configserver:http://localhost:8001}
-
+    import: ${SPRING_CONFIG_IMPORT:configserver:http://host.docker.internal:8001}

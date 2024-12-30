@@ -1,0 +1,15 @@
+services:
+  service-discovery-service:
+    container_name: eda-service-discovery-service
+    image: service-discovery-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 8002:8002
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - SPRING_CONFIG_IMPORT=configserver:http://host.docker.internal:8001
