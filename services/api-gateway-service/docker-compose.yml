@@ -1,13 +1,13 @@
 services:
-  config-service:
-    container_name: eda-config-service
-    image: config-service
+  api-gateway-service:
+    container_name: eda-api-gateway-service
+    image: api-gateway-service
     build:
       context: .
       dockerfile: Dockerfile
     restart: unless-stopped
     ports:
-      - 8001:8001
+      - 8003:8003
     environment:
       - SPRING_PROFILES_ACTIVE=local
       - SPRING_CONFIG_IMPORT=configserver:http://host.docker.internal:8001

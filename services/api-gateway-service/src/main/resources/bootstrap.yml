@@ -1,0 +1,7 @@
+server:
+  forward-headers-strategy: framework
+spring:
+  application:
+    name: api-gateway-service
+  config:
+    import: ${SPRING_CONFIG_IMPORT:configserver:http://localhost:8001}
