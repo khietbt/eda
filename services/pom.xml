@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <name>services</name>
 
-    <description>Eda backend services</description>
+    <description>An eda backend services</description>
 
     <modules>
         <module>api-gateway-service</module>
