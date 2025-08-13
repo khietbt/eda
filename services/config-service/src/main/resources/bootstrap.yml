@@ -10,8 +10,19 @@ spring:
           search-locations: ${SPRING_CLOUD_SERVER_NATIVE_SEARCH_LOCATIONS}
   profiles:
     include: native
+  discovery:
+    enabled: true
 
 logging:
   pattern:
     correlation: "[${spring.application.name:},%X{traceId:-},%X{spanId:-}] "
   include-application-name: false
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE}
+  instance:
+    hostname: ${EUREKA_INSTANCE_HOSTNAME}

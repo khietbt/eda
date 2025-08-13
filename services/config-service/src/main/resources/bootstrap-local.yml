@@ -1,2 +1,0 @@
-SERVER_PORT: 8001
-SPRING_CLOUD_SERVER_NATIVE_SEARCH_LOCATIONS: classpath:/configuration-files

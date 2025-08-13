@@ -9,10 +9,10 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-boot.version>3.4.3</spring-boot.version>
-        <spring-cloud.version>2024.0.0</spring-cloud.version>
-        <lombok.version>1.18.32</lombok.version>
-        <micrometer-tracing.version>1.4.1</micrometer-tracing.version>
+        <spring-boot.version>3.5.4</spring-boot.version>
+        <spring-cloud.version>2025.0.0</spring-cloud.version>
+        <lombok.version>1.18.38</lombok.version>
+        <micrometer-tracing.version>1.5.2</micrometer-tracing.version>
     </properties>
 
     <artifactId>config-service</artifactId>
@@ -37,6 +37,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
     </dependencies>
 

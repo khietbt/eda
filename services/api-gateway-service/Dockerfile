@@ -1,4 +1,4 @@
-FROM alpine/java:21-jdk
+FROM alpine/java:21-jre
 
 WORKDIR /app
 

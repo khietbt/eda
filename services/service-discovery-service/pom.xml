@@ -6,9 +6,9 @@
 
     <groupId>io.github.khietbt.eda.services</groupId>
 
-    <artifactId>servicediscoveryservice</artifactId>
+    <artifactId>service-discovery-service</artifactId>
     <description>Spring cloud eureka server</description>
-    <name>servicediscoveryservice</name>
+    <name>service-discovery-service</name>
     <version>1.0.0</version>
 
     <properties>

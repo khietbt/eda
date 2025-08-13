@@ -4,4 +4,12 @@ spring:
   application:
     name: api-gateway-service
   config:
-    import: ${SPRING_CONFIG_IMPORT:configserver:http://localhost:8001}
+    import: ${SPRING_CONFIG_IMPORT}
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
