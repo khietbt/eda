@@ -8,8 +8,6 @@ spring:
       server:
         native:
           search-locations: ${SPRING_CLOUD_SERVER_NATIVE_SEARCH_LOCATIONS}
-  profiles:
-    include: native
   discovery:
     enabled: true
 

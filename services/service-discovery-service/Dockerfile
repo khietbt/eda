@@ -2,6 +2,6 @@ FROM alpine/java:21-jre
 
 WORKDIR /app
 
-COPY target/servicediscoveryservice-1.0.0.jar servicediscoveryservice.jar
+COPY target/service-discovery-service-1.0.0.jar service-discovery-service.jar
 
-ENTRYPOINT ["java", "-jar", "servicediscoveryservice.jar"]
+ENTRYPOINT ["java", "-jar", "service-discovery-service.jar"]

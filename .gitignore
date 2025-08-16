@@ -29,3 +29,4 @@ target/
 .classpath
 .vscode
 .idea/
+data/
