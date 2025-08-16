@@ -1,5 +1,6 @@
-#! /bin/bash
-TOPDIR=$(dirname $(dirname -- "$(readlink -f -- "$0")"))
+#!/usr/bin/bash
+
+TOPDIR=$(dirname "$(dirname -- "$(readlink -f -- "$0")")")
 
 cd ${TOPDIR}
 

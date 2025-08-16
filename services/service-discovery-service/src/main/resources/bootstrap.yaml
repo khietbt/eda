@@ -1,5 +1,5 @@
 spring:
   application:
-    name: service-discovery-service
+    name: ${SPRING_APPLICATION_NAME}
   config:
     import: ${SPRING_CONFIG_IMPORT}
