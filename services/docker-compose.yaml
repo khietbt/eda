@@ -1,0 +1,4 @@
+include:
+  - config-service/docker-compose.yaml
+  - service-discovery-service/docker-compose.yaml
+  - api-gateway-service/docker-compose.yaml
