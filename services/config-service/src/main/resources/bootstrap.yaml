@@ -7,9 +7,13 @@ spring:
     config:
       server:
         native:
-          search-locations: ${SPRING_CLOUD_SERVER_NATIVE_SEARCH_LOCATIONS}
+          search-locations: ${SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS}
   discovery:
     enabled: true
+  security:
+    user:
+      name: ${SPRING_SECURITY_USER_NAME}
+      password: ${SPRING_SECURITY_USER_PASSWORD}
 
 logging:
   pattern:

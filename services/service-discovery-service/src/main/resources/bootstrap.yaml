@@ -1,5 +1,9 @@
 spring:
   application:
     name: ${SPRING_APPLICATION_NAME}
-  config:
-    import: ${SPRING_CONFIG_IMPORT}
+  cloud:
+    config:
+      uri: ${SPRING_CLOUD_CONFIG_URI}
+      username: ${SPRING_CLOUD_CONFIG_USERNAME}
+      password: ${SPRING_CLOUD_CONFIG_PASSWORD}
+      fail-fast: true
