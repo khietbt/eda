@@ -1,0 +1,15 @@
+services:
+  keycloak-service:
+    container_name: eda-keycloak-service
+    image: quay.io/keycloak/keycloak:latest
+    command: start --import-realm
+    env_file:
+      - ./environments/env.docker
+    ports:
+      - "8080:8080"
+      - "9000:9000"
+    restart: unless-stopped
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    volumes:
+      - ./realms:/opt/keycloak/data/import
