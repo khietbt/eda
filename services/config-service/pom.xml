@@ -41,6 +41,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-client</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -76,7 +80,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <layout>JAR</layout>
-                    <mainClass>io.github.khietbt.eda.services.configservice.ConfigService</mainClass>
+                    <mainClass>io.github.khietbt.eda.services.configservice.ConfigServiceApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
