@@ -4,9 +4,8 @@ services:
     container_name: eda-mysql-service
     image: mysql:latest
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_ai_ci
-    environment:
-      - MYSQL_ROOT_PASSWORD: root
-      - MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+    env_file:
+        - ./environments/env.docker
     ports:
       - "3306:3306"
     volumes:
