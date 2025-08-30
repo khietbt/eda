@@ -16,11 +16,11 @@
         <spring-cloud.version>2025.0.0</spring-cloud.version>
     </properties>
 
-    <artifactId>config-service</artifactId>
     <name>config-service</name>
-    <groupId>io.github.khietbt.eda.services</groupId>
-    <version>1.0.0</version>
     <description>Spring Cloud Config Server</description>
+    <groupId>io.github.khietbt.eda.services</groupId>
+    <artifactId>config-service</artifactId>
+    <version>1.0.0</version>
 
     <packaging>jar</packaging>
 

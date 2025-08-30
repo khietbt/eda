@@ -4,7 +4,7 @@ services:
     image: quay.io/keycloak/keycloak:latest
     command: start --import-realm
     env_file:
-      - ./environments/env.docker
+      - ./environments/env.local
     ports:
       - "8080:8080"
       - "9000:9000"
