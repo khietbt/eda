@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI}
+      client:
+        registration:
+          eda:
+            authorization-grant-type: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_EDA_AUTHORIZATION_GRANT_TYPE}
+            client-id: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_EDA_CLIENT_ID}
+            client-secret: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_EDA_CLIENT_SECRET}
+            provider: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_EDA_PROVIDER}
+            redirect-uri: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_EDA_REDIRECT_URI}
+            scope: ${SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_EDA_REDIRECT_SCOPE}
+        provider:
+          eda:
+            authorization-uri: ${SPRING_SECURITY_OAUTH2_PROVIDER_EDA_AUTHORIZATION_URI}
+            issuer-uri: ${SPRING_SECURITY_OAUTH2_PROVIDER_EDA_ISSUER_URI}
+            token-uri: ${SPRING_SECURITY_OAUTH2_PROVIDER_EDA_TOKEN_URI}
+            user-info-uri: ${SPRING_SECURITY_OAUTH2_PROVIDER_EDA_USER_INFO_URI}
+            user-name-attribute: ${SPRING_SECURITY_OAUTH2_PROVIDER_EDA_USER_NAME_ATTRIBUTE}
