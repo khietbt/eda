@@ -1,5 +1,5 @@
 services:
-  config-service:
+  admin-service:
     container_name: eda-admin-service
     image: admin-service
     build:
