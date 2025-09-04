@@ -1,0 +1,14 @@
+services:
+  user-service:
+    container_name: eda-user-service
+    image: user-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8004:8004"
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    env_file:
+      - ./environments/env.local
