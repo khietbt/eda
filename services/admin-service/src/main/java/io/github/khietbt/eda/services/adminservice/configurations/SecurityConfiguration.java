@@ -1,4 +1,4 @@
-package io.github.khietbt.eda.services.configservice.configurations;
+package io.github.khietbt.eda.services.adminservice.configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
