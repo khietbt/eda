@@ -5,3 +5,4 @@ spring:
         provider:
           eda:
             issuer-uri: ${SPRING_SECURITY_OAUTH2_PROVIDER_EDA_ISSUER_URI}
+            user-name-attribute: ${SPRING_SECURITY_OAUTH2_PROVIDER_EDA_USER_NAME_ATTRIBUTE}
