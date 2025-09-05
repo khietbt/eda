@@ -2,3 +2,5 @@ eureka:
   client:
     serviceUrl:
       defaultZone: ${EUREKA_CLIENT_SERVICE_URL_DEFAULT_ZONE}
+    jersey:
+      enabled: false
