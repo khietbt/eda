@@ -60,6 +60,10 @@
             <artifactId>spring-boot-admin-starter-server</artifactId>
             <version>${spring-boot-admin.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

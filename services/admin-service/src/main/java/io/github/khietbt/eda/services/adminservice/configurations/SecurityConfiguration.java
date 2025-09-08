@@ -18,11 +18,7 @@ public class SecurityConfiguration {
         final HttpSecurity http,
         final ClientRegistrationRepository clientRegistrationRepository
     ) throws Exception {
-        http.authorizeHttpRequests(
-                authorizationConfigurer -> {
-                    authorizationConfigurer.requestMatchers("/actuator/**").permitAll();
-                    authorizationConfigurer.anyRequest().authenticated();
-                })
+        http.authorizeHttpRequests(authorizationConfigurer -> authorizationConfigurer.anyRequest().authenticated())
             .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
             .oauth2Login(Customizer.withDefaults())
             .logout(logoutConfigurer -> {

@@ -20,7 +20,6 @@ public class SecurityConfiguration {
     ) throws Exception {
         http.authorizeHttpRequests(
                 authorizationConfigurer -> {
-                    authorizationConfigurer.requestMatchers("/actuator/**").permitAll();
                     authorizationConfigurer.anyRequest().authenticated();
                 })
             .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
