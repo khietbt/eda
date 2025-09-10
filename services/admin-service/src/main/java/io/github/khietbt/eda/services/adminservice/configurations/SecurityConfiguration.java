@@ -3,33 +3,37 @@ package io.github.khietbt.eda.services.adminservice.configurations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.oauth2.client.oidc.web.logout.OidcClientInitiatedLogoutSuccessHandler;
-import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
+import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.oauth2.client.oidc.web.server.logout.OidcClientInitiatedServerLogoutSuccessHandler;
+import org.springframework.security.oauth2.client.registration.ReactiveClientRegistrationRepository;
+import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.logout.ServerLogoutSuccessHandler;
 
 @Configuration
-@EnableWebSecurity
+@EnableWebFluxSecurity
 public class SecurityConfiguration {
     @Bean
-    public SecurityFilterChain filterChain(
-        final HttpSecurity http,
-        final ClientRegistrationRepository clientRegistrationRepository
-    ) throws Exception {
-        http.authorizeHttpRequests(authorizationConfigurer -> authorizationConfigurer.anyRequest().authenticated())
-            .oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
+    public SecurityWebFilterChain filterChain(
+        final ServerHttpSecurity http,
+        final ReactiveClientRegistrationRepository repository
+    ) {
+        return http
+            .authorizeExchange(spec -> spec.anyExchange().authenticated())
             .oauth2Login(Customizer.withDefaults())
-            .logout(logoutConfigurer -> {
-                var handler = new OidcClientInitiatedLogoutSuccessHandler(clientRegistrationRepository);
+            .oauth2ResourceServer(spec -> spec.jwt(Customizer.withDefaults()))
+            .logout(spec -> spec.logoutSuccessHandler(oidcLogoutSuccessHandler(repository)))
+            .csrf(ServerHttpSecurity.CsrfSpec::disable)
+            .build();
+    }
 
-                handler.setPostLogoutRedirectUri("{baseUrl}");
+    private ServerLogoutSuccessHandler oidcLogoutSuccessHandler(
+        final ReactiveClientRegistrationRepository repository
+    ) {
+        var handler = new OidcClientInitiatedServerLogoutSuccessHandler(repository);
 
-                logoutConfigurer.logoutSuccessHandler(handler);
-            })
-            .csrf(AbstractHttpConfigurer::disable);
+        handler.setPostLogoutRedirectUri("{baseUrl}");
 
-        return http.build();
+        return handler;
     }
 }
