@@ -1,0 +1,10 @@
+services:
+  rabbitmq:
+    image: rabbitmq:management # Uses the image with the management plugin
+    container_name: eda-rabbitmq-service
+    restart: unless-stopped
+    ports:
+      - "5672:5672" # Standard AMQP port
+      - "15672:15672" # Management UI port
+    env_file:
+        - environments/env.local
